@@ -1,0 +1,95 @@
+first header show korbay but scroll korar por header upor e jaity thakbay jokhon header astay astay upor e cholay jabay  then abar show korbay and sticky thakby.
+
+#koto tuk scroll korlam oitar valu nibo scrolled variable e :
+const [scrolled,setScrolled]=useState(false);
+
+#scroll er valu ber korar jonno useEffect e "scroll" event  use korbo and handelscroll dia oita comtrol korbo
+useEffect(()=>{
+    window.addEventListener("scroll",handleScroll)
+  },[])
+
+#
+const handleScroll=()=>{
+    const offset = window.scrollY;
+    if(offset>200){
+      setScrolled(true);
+    }else{
+      setScrolled(false);
+    }
+  }
+
+
+#scrolled er valu true holay ekta extra class add korbo "sticky-class"
+className={`main-header ${scrolled ? "sticky-header" : ""}`}
+
+#css dia oitar style korbo
+&.sticky-header {
+        background-color: #212121;
+        color: white;
+        position: sticky/fixed;
+        top: 0;
+        transform: translateY(-60px);
+        animation: StickyHeader 0.3s ease forwards;
+    }
+
+
+@keyframes StickyHeader {
+    0% {
+        transform: translateY(-60px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+********************************************************************************************************************************************************************************************
+
+CSS Transitions = https://www.w3schools.com/css/css3_transitions.asp
+
+
+display:flex;
+flex-direction:row/column-reveres;
+
+
+#long line purata show na koray last e  ... nia asar jonno css holo-
+
+text-overflow: ellipsis;
+white-space: nowrap;
+ overflow: hidden; 
+
+
+
+transform-
+skewY(20deg)
+scale(1.2)
+rotate(20deg)
+
+
+********************************************************************************************************************************************************************************************
+video ==2:49
+
+product component er normal heading chilo oita 1 dia Related Products banaisay 2 dia Popular Products banai say 3 dia delet koray disay
+
+<Products headingText="Related Products"/>1
+<Products headingText="Popular Products"/>2
+ <Products innerPage={true}/>3
+
+
+export default function Products({innerPage, headingText}) {
+return (
+{!innerPage && <div className="sec-heading">{headingText}</div>}
+
+);
+}
+
+********************************************************************************************************************************************************************************************
+
+1.overflow:
+2.
+
+
+
+
+
+
